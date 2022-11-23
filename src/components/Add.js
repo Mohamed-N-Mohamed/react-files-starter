@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./Add.module.css";
 
-const Add = ({ setAddShoe, addShoe }) => {
+const Add = ({ setAddShoe, addShoe, setShoes, shoes }) => {
   const handleOnChange = (e) => {
     const { value, name } = e.target;
-
     setAddShoe((prev) => {
       return {
         ...prev,
@@ -15,9 +14,7 @@ const Add = ({ setAddShoe, addShoe }) => {
 
   const handleImage = (e) => {
     const { name, files, type, value } = e.target;
-
     const imagePath = files[0].name;
-
     setAddShoe((prev) => {
       return {
         ...prev,
@@ -26,7 +23,20 @@ const Add = ({ setAddShoe, addShoe }) => {
     });
   };
 
-  console.log(addShoe);
+  const handleUpload = (e) => {
+    //prevent default
+    e.preventDefault();
+    console.log(addShoe);
+    //todo fix this
+    // setShoes(shoes.push(addShoe));
+    //  setShoes(
+    //    shoes.map((shoe) => {
+    //      console.log(addShoe);
+    //      return { ...addShoe, shoe };
+    //    })
+    // );
+  };
+
   return (
     <div className={styles.add}>
       <h3>Add New Shoe</h3>
@@ -43,11 +53,15 @@ const Add = ({ setAddShoe, addShoe }) => {
           <input
             type='file'
             name='image'
-            value={addShoe.image}
+            // defaultValue={addShoe.image}
             className={styles.file}
             onChange={(e) => handleImage(e)}
           />
         </div>
+
+        <button className={styles.addButton} onClick={handleUpload}>
+          Add
+        </button>
       </form>
     </div>
   );

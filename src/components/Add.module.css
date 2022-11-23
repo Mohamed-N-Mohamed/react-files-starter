@@ -27,3 +27,13 @@
   cursor: pointer;
   width: 195px;
 }
+.addButton {
+  margin-top: 50px;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: black;
+  border: none;
+  color: #fff;
+}

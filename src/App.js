@@ -9,14 +9,16 @@ function App() {
   const [shoes, setShoes] = useState(data);
   const [clicked, setClicked] = useState(false);
   const [updateName, setUpdateName] = useState("");
-  const [addShoe, setAddShoe] = useState({
-    id: 7,
-    name: "",
-    price: 0,
-    image: "",
-  });
+  const [addShoe, setAddShoe] = useState(
+    {
+      id: 7,
+      name: "",
+      price: 300,
+      image: "",
+    },
+  );
 
-  console.log(addShoe);
+  console.log(shoes);
 
   //handle clicked function
   const handleOnClick = (id) => {
@@ -44,7 +46,12 @@ function App() {
         clicked={clicked}
         setClicked={setClicked}
       />
-      <Add setAddShoe={setAddShoe} addShoe={addShoe} />
+      <Add
+        setAddShoe={setAddShoe}
+        addShoe={addShoe}
+        setShoes={setShoes}
+        shoes={shoes}
+      />
     </div>
   );
 }
