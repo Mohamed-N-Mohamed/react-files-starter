@@ -1,0 +1,29 @@
+.add {
+  position: absolute;
+  top: 60px;
+  left: -150px;
+  padding: 13px 0;
+}
+
+.formgroup {
+  height: 60px;
+  width: 150px;
+  padding: 2rem 0;
+}
+.name {
+  padding: 5px 6px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.file {
+  /* background-color: #ccc; */
+  display: inline-block;
+  padding: 6px 5px;
+  margin-top: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 195px;
+}

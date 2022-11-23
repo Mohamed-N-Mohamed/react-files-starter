@@ -3,14 +3,20 @@ import Footwear from "./components/Footwear";
 import data from "./shoes/data";
 import "./App.css";
 import Update from "./components/Update";
+import Add from "./components/Add";
 
 function App() {
   const [shoes, setShoes] = useState(data);
   const [clicked, setClicked] = useState(false);
-  const [name, setName] = useState("");
   const [updateName, setUpdateName] = useState("");
+  const [addShoe, setAddShoe] = useState({
+    id: 7,
+    name: "",
+    price: 0,
+    image: "",
+  });
 
-  console.log(shoes);
+  console.log(addShoe);
 
   //handle clicked function
   const handleOnClick = (id) => {
@@ -38,6 +44,7 @@ function App() {
         clicked={clicked}
         setClicked={setClicked}
       />
+      <Add setAddShoe={setAddShoe} addShoe={addShoe} />
     </div>
   );
 }
