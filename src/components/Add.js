@@ -27,14 +27,7 @@ const Add = ({ setAddShoe, addShoe, setShoes, shoes }) => {
     //prevent default
     e.preventDefault();
     console.log(addShoe);
-    //todo fix this
-    // setShoes(shoes.push(addShoe));
-    //  setShoes(
-    //    shoes.map((shoe) => {
-    //      console.log(addShoe);
-    //      return { ...addShoe, shoe };
-    //    })
-    // );
+    setShoes([...shoes, addShoe]);
   };
 
   return (
